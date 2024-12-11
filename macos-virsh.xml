@@ -1,0 +1,27 @@
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+
+
+  <name>OSX</name>
+  <memory unit='KiB'>2097152</memory>
+  <currentMemory unit='KiB'>2097152</currentMemory>
+  <vcpu placement='static'>4</vcpu>
+ 
+
+  <os>
+    <type arch='x86_64' machine='q35'>hvm</type>
+    <loader readonly='yes' type='pflash'>/YOURPATH/macOS-Simple-KVM/firmware/OVMF_CODE.fd</loader>
+    <nvram>/YOURPATH/macOS-Simple-KVM/firmware/OVMF_VARS-1024x768.fd</nvram>
+    <boot dev='hd'/>
+  </os>
+
+
+
+  <features>
+    <acpi/>
+    <pae/>
+  </features>
+  
+  <cpu>
+    <topology sockets='1' cores='4' threads='1'/>
+  </cpu>
+
